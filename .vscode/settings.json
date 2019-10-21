@@ -1,0 +1,29 @@
+{
+  "autoDocstring.docstringFormat": "google",
+  "pyright.disableLanguageServices": false,
+  "python.formatting.provider": "yapf",
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pydocstyleEnabled": true,
+  "python.sortImports.path": "isort",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.disabled": ["inherit-non-class"],
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "python.linting.pylintCategorySeverity.refactor": "Warning",
+  "python.linting.pylintCategorySeverity.convention": "Warning",
+  "python.linting.mypyCategorySeverity.note": "Warning",
+  "json.format.enable": true,
+  "beautify.ignore": ["**/*"],
+  "python.venvFolders": [".venv"],
+  "python.pythonPath": ".venv/bin/python",
+  "go.inferGopath": false
+}
