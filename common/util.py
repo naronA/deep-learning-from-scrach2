@@ -1,13 +1,14 @@
 """util."""
+from typing import Dict, List, Tuple
+
 import numpy as np
 from numpy import ndarray
-from typing import List, Dict, Tuple
 
 
 def preprocess(text: str) -> Tuple[ndarray, Dict[str, int], Dict[int, str]]:
     """Preprocess test."""
     text = text.lower()
-    text = text.replace('.', ' .')
+    text = text.replace(".", " .")
     words: List[str] = text.split()
     word_to_id: Dict[str, int] = {}
     id_to_word: Dict[int, str] = {}
@@ -44,24 +45,20 @@ def create_co_matrix(corpus, vocab_size, window_size=1) -> np.ndarray:
 
 def cos_similarity(x, y, eps=1e-8):
     """Cosine similarity."""
-    nx = x / np.sqrt(np.sum(x**2) + eps)    # xの正規化
-    ny = y / np.sqrt(np.sum(y**2) + eps)    # yの正規化
+    nx = x / np.sqrt(np.sum(x ** 2) + eps)  # xの正規化
+    ny = y / np.sqrt(np.sum(y ** 2) + eps)  # yの正規化
     return np.dot(nx, ny)
 
 
 def most_similar(
-        query: str,
-        word_to_id: Dict[str, int],
-        id_to_word: Dict[int, str],
-        word_matrix: np.ndarray,
-        top: int = 5
+    query: str, word_to_id: Dict[str, int], id_to_word: Dict[int, str], word_matrix: np.ndarray, top: int = 5
 ):
     """最も似た単語を返す."""
     # 1. クエリを取り出す (クエリ=単語)
     if query not in word_to_id:
-        print('%s is not found' % query)
+        print("%s is not found" % query)
         return
-    print('\n[query] ' + query)
+    print("\n[query] " + query)
     query_id = word_to_id[query]
     query_vec = word_matrix[query_id]
 
@@ -77,7 +74,7 @@ def most_similar(
     for i in (-1 * similarity).argsort():
         if id_to_word[i] == query:
             continue
-        print(' %s: %s' % (id_to_word[i], similarity[i]))
+        print(" %s: %s" % (id_to_word[i], similarity[i]))
 
         count += 1
         if count >= top:

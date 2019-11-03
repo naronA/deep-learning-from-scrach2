@@ -37,11 +37,12 @@
 
 #%%
 import sys
-sys.path.append('..')
+
+sys.path.append("..")
 import numpy as np
 from common.util import preprocess
 
-text = 'You say goodbye and I say hello.'
+text = "You say goodbye and I say hello."
 corpus, word_to_id, id_to_word = preprocess(text)
 print(corpus)
 print(id_to_word)
@@ -55,6 +56,7 @@ print(id_to_word)
 
 #%%
 import numpy as np
+
 C = np.array(
     [
         [0, 1, 0, 0, 0, 0, 0],
@@ -65,11 +67,11 @@ C = np.array(
         [0, 1, 0, 0, 0, 0, 1],
         [0, 0, 0, 0, 0, 1, 0],
     ],
-    dtype=np.int32
+    dtype=np.int32,
 )
 
 print(C[0])
-print(C[word_to_id['goodbye']])
+print(C[word_to_id["goodbye"]])
 
 
 #%% [markdown]
@@ -85,12 +87,18 @@ print(C[word_to_id['goodbye']])
 #%%
 from common import util
 
-text = 'You say goodbye and I say hello.'
+text = "You say goodbye and I say hello."
 corpus, word_to_id, id_to_word = preprocess(text)
 vocab_size = len(word_to_id)
 C = util.create_co_matrix(corpus, vocab_size)
 
-c0 = C[word_to_id['you']] # youの単語ベクトル
-c1 = C[word_to_id['i']] # iの単語ベクトル
+c0 = C[word_to_id["you"]]  # youの単語ベクトル
+c1 = C[word_to_id["i"]]  # iの単語ベクトル
 print(c0, c1)
 print(util.cos_similarity(c0, c1))
+
+#%%
+import numpy as np
+
+x = np.array([100, -20, 2])
+print(x.argsort())

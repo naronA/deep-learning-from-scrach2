@@ -1,0 +1,76 @@
+{
+  "autoDocstring.docstringFormat": "google",
+  "pyright.disableLanguageServices": false,
+  "python.jediEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.pydocstyleEnabled": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.disabled": [
+    "inherit-non-class"
+  ],
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.jsxSingleQuote": true,
+  "prettier.jsxBracketSameLine": true,
+  "python.linting.pylintCategorySeverity.refactor": "Warning",
+  "python.linting.pylintCategorySeverity.convention": "Warning",
+  "python.linting.mypyCategorySeverity.note": "Warning",
+  "json.format.enable": true,
+  "beautify.ignore": [
+    "**/*"
+  ],
+  "python.venvFolders": [
+    ".venv"
+  ],
+  "python.pythonPath": ".venv/bin/python",
+  "terminal.integrated.env.linux": {
+    "PIPENV_DOTENV_LOCATION": "${workspaceFolder}/.env.workspace",
+    "PIPENV_VENV_IN_PROJECT": "true"
+  },
+  "terminal.integrated.env.osx": {
+    "PIPENV_DOTENV_LOCATION": "${workspaceFolder}/.env.workspace",
+    "PIPENV_VENV_IN_PROJECT": "true"
+  },
+  "python.sortImports.path": "isort",
+  "python.sortImports.args": [
+    "--settings-path=${workspaceFolder}/.isort.cfg"
+  ],
+  "python.formatting.provider": "black",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true,
+    "**/.venv": true
+  },
+  "yaml.customTags": [
+    "!Ref",
+    "!Sub scalar",
+    "!Sub sequence",
+    "!Join sequence",
+    "!FindInMap sequence",
+    "!GetAtt scalar",
+    "!GetAtt sequence",
+    "!Base64 mapping",
+    "!GetAZs",
+    "!Select scalar",
+    "!Select sequence",
+    "!Split sequence",
+    "!ImportValue",
+    "!Condition",
+    "!Equals sequence",
+    "!And",
+    "!If",
+    "!Not",
+    "!Or"
+  ]
+}
